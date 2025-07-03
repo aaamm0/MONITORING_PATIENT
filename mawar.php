@@ -295,7 +295,7 @@ $base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Bed 1
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Bed 2
                                                 </div>
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col-auto">
@@ -522,17 +522,13 @@ $base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT
                 .then(response => response.json())
                 .then(data => {
                     const card = document.getElementById("bed2-card");
+                    card.classList.remove("bg-white", "bg-danger", "bg-warning"); // bersihkan semua dulu
                     if (data.event === "call") {
                         card.classList.add("bg-danger");
-                        card.classList.remove("bg-white");
-                    }
-                    if (data.event === "start") {
+                    } else if (data.event === "start") {
                         card.classList.add("bg-warning");
-                        card.classList.remove("bg-white");
-                    }
-                    if (data.event === "stop") {
+                    } else if (data.event === "stop") {
                         card.classList.add("bg-white");
-                        card.classList.remove("bg-warning");
                     }
                 })
                 .catch(error => console.error("Failed to fetch event:", error));
