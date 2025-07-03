@@ -1,0 +1,10 @@
+2025-06-16 08:09:48 - Action: call, Duration: 0 detik
+2025-06-16 08:13:02 - Action: call, Duration: 0 detik
+2025-06-16 08:22:39 - Action: call, Duration: 0 detik
+2025-06-16 08:22:42 - Action: call, Duration: 0 detik
+2025-06-16 08:22:44 - Action: start, Duration: 0 detik
+2025-06-16 08:22:46 - Action: stop, Duration: 1 detik
+2025-06-16 08:22:47 - Action: call, Duration: 0 detik
+2025-06-16 08:22:49 - Action: start, Duration: 0 detik
+2025-06-16 08:22:53 - Action: stop, Duration: 3 detik
+2025-06-16 08:22:57 - Action: call, Duration: 0 detik
