@@ -487,27 +487,22 @@ $base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT
 </html>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        function updateCard() {
+       function updateCard() {
             fetch("card-data.php")
                 .then(response => response.json())
                 .then(data => {
                     const card = document.getElementById("bed1-card");
+                    card.classList.remove("bg-white", "bg-danger", "bg-warning"); // bersihkan semua dulu
                     if (data.event === "call") {
                         card.classList.add("bg-danger");
-                        card.classList.remove("bg-white");
-                    }
-                    if (data.event === "start") {
-                        card.classList.add("bg-success");
-                        card.classList.remove("bg-white");
-                    }
-                    if (data.event === "stop") {
+                    } else if (data.event === "start") {
+                        card.classList.add("bg-warning");
+                    } else if (data.event === "stop") {
                         card.classList.add("bg-white");
-                        card.classList.remove("bg-warning");
                     }
                 })
                 .catch(error => console.error("Failed to fetch event:", error));
         }
-
         // Panggil pertama kali saat halaman selesai dimuat
         updateCard();
 
