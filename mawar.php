@@ -496,10 +496,11 @@ $base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT
                         card.classList.add("bg-danger");
                         card.classList.remove("bg-white");
                     }
-                    if (data.event === "warning") {
+                    if (data.event === "start") {
                         card.classList.add("bg-success");
                         card.classList.remove("bg-white");
-                    } else {
+                    }
+                    if (data.event === "stop") {
                         card.classList.add("bg-white");
                         card.classList.remove("bg-warning");
                     }
@@ -528,7 +529,8 @@ $base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT
                     if (data.event === "start") {
                         card.classList.add("bg-warning");
                         card.classList.remove("bg-white");
-                    } else {
+                    }
+                    if (data.event === "stop") {
                         card.classList.add("bg-white");
                         card.classList.remove("bg-warning");
                     }
