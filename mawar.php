@@ -1,7 +1,7 @@
-<?php 
+<?php
 include("konek.php");
 $list_room = $conn->query("SELECT * FROM `infus_tbl`");
-$berat=[];
+$berat = [];
 
 if ($list_room->num_rows > 0) {
     // Loop through the results and store in arrays
@@ -12,8 +12,8 @@ if ($list_room->num_rows > 0) {
 
 date_default_timezone_set('Asia/Jakarta');
 $base_url = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
-$base_url .= "://".$_SERVER['HTTP_HOST'];
-$base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
+$base_url .= "://" . $_SERVER['HTTP_HOST'];
+$base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +54,7 @@ $base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_N
                     <i class="fas fa-laugh-wink"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Nurse Monitor <sup>IOT<sup></div>
-                </a>
+            </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
@@ -244,39 +244,39 @@ $base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_N
 
                 </nav>
                 <!-- End of Topbar -->
-                
-                    <!-- Main Page -->
-                    <div class="container-fluid">
+
+                <!-- Main Page -->
+                <div class="container-fluid">
                     <div class="col-xl-12 col-lg-12">
 
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">ROOM MAWAR</h1>
                         </div>
 
-                            <!-- Content Row -->
+                        <!-- Content Row -->
                         <div class="row">
 
                             <!-- BED 1 -->
                             <div class="col-xl-3 col-md-6 mb-4">
-                             <div id="bed1-card" class="card border-left-info shadow h-100 py-2">
+                                <div id="bed1-card" class="card border-left-info shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Bed 1
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Bed 1
                                                 </div>
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col-auto">
                                                         <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                        <?php echo $berat[0]; ?> ml</div>
+                                                            <?php echo $berat[0]; ?> ml</div>
                                                     </div>
                                                     <div class="col">
                                                         <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: <?php echo min(max($berat[0]/10, 0), 100); ?>%" 
-                                                            aria-valuenow="<?php echo $berat[0]; ?>" 
-                                                            aria-valuemin="0" 
-                                                            aria-valuemax="100">
-                                                        </div>
+                                                            <div class="progress-bar bg-info" role="progressbar"
+                                                                style="width: <?php echo min(max($berat[0] / 10, 0), 100); ?>%"
+                                                                aria-valuenow="<?php echo $berat[0]; ?>"
+                                                                aria-valuemin="0"
+                                                                aria-valuemax="100">
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -300,22 +300,22 @@ $base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_N
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col-auto">
                                                         <div class="h5 mb-0 mr-3 font-weight-bold text-white">
-                                                        <?php echo $berat[1]; ?> ml</div>
+                                                            <?php echo $berat[1]; ?> ml</div>
                                                     </div>
                                                     <div class="col">
                                                         <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: <?php echo min(max($berat[1]/10, 0), 100); ?>%" 
-                                                            aria-valuenow="<?php echo $berat[1]; ?>" 
-                                                            aria-valuemin="0" 
-                                                            aria-valuemax="100">
-                                                        </div>
+                                                            <div class="progress-bar bg-info" role="progressbar"
+                                                                style="width: <?php echo min(max($berat[1] / 10, 0), 100); ?>%"
+                                                                aria-valuenow="<?php echo $berat[1]; ?>"
+                                                                aria-valuemin="0"
+                                                                aria-valuemax="100">
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-auto">
-                                            <i class="fas fa-syringe fa-2x text-gray-300"></i>
+                                                <i class="fas fa-syringe fa-2x text-gray-300"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -333,22 +333,22 @@ $base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_N
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col-auto">
                                                         <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                        <?php echo $berat[5]; ?> ml</div>
+                                                            <?php echo $berat[5]; ?> ml</div>
                                                     </div>
                                                     <div class="col">
                                                         <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: <?php echo min(max($berat[2]/10, 0), 100); ?>%" 
-                                                            aria-valuenow="<?php echo $berat[5]; ?>" 
-                                                            aria-valuemin="0" 
-                                                            aria-valuemax="100">
-                                                        </div>
+                                                            <div class="progress-bar bg-info" role="progressbar"
+                                                                style="width: <?php echo min(max($berat[2] / 10, 0), 100); ?>%"
+                                                                aria-valuenow="<?php echo $berat[5]; ?>"
+                                                                aria-valuemin="0"
+                                                                aria-valuemax="100">
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-auto">
-                                            <i class="fas fa-syringe fa-2x text-gray-300"></i>
+                                                <i class="fas fa-syringe fa-2x text-gray-300"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -366,22 +366,22 @@ $base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_N
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col-auto">
                                                         <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                        <?php echo $berat[5]; ?> ml</div>
+                                                            <?php echo $berat[5]; ?> ml</div>
                                                     </div>
                                                     <div class="col">
                                                         <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: <?php echo min(max($berat[2]/10, 0), 100); ?>%" 
-                                                            aria-valuenow="<?php echo $berat[5]; ?>" 
-                                                            aria-valuemin="0" 
-                                                            aria-valuemax="100">
-                                                        </div>
+                                                            <div class="progress-bar bg-info" role="progressbar"
+                                                                style="width: <?php echo min(max($berat[2] / 10, 0), 100); ?>%"
+                                                                aria-valuenow="<?php echo $berat[5]; ?>"
+                                                                aria-valuemin="0"
+                                                                aria-valuemax="100">
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-auto">
-                                            <i class="fas fa-syringe fa-2x text-gray-300"></i>
+                                                <i class="fas fa-syringe fa-2x text-gray-300"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -399,26 +399,26 @@ $base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_N
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col-auto">
                                                         <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                        <?php echo $berat[5]; ?> ml</div>
+                                                            <?php echo $berat[5]; ?> ml</div>
                                                     </div>
                                                     <div class="col">
                                                         <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: <?php echo min(max($berat[2]/10, 0), 100); ?>%" 
-                                                            aria-valuenow="<?php echo $berat[5]; ?>" 
-                                                            aria-valuemin="0" 
-                                                            aria-valuemax="100">
-                                                        </div>
+                                                            <div class="progress-bar bg-info" role="progressbar"
+                                                                style="width: <?php echo min(max($berat[2] / 10, 0), 100); ?>%"
+                                                                aria-valuenow="<?php echo $berat[5]; ?>"
+                                                                aria-valuemin="0"
+                                                                aria-valuemax="100">
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <i class="fas fa-syringe fa-2x text-gray-300"></i>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
 
                     </div>
@@ -433,13 +433,13 @@ $base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_N
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
-                     <div class="copyright text-center my-auto">
+                    <div class="copyright text-center my-auto">
                         <span>Copyright &copy; Your Website 2021</span>
                     </div>
                 </div>
             </footer>
             <!-- End of Footer -->
-             
+
         </div>
         <!-- End of Content Wrapper -->
 
@@ -486,27 +486,30 @@ $base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_N
 
 </html>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    function updateCard() {
-        fetch("card-data.php")
-            .then(response => response.json())
-            .then(data => {
-                const card = document.getElementById("bed1-card");
-                if (data.event === "call") {
-                    card.classList.add("bg-warning");
-                    card.classList.remove("bg-white");
-                } else {
-                    card.classList.add("bg-white");
-                    card.classList.remove("bg-warning");
-                }
-            })
-            .catch(error => console.error("Failed to fetch event:", error));
-    }
+    document.addEventListener("DOMContentLoaded", function() {
+        function updateCard() {
+            fetch("card-data.php")
+                .then(response => response.json())
+                .then(data => {
+                    const card = document.getElementById("bed1-card");
+                    if (data.event === "call") {
+                        card.classList.add("bg-warning");
+                        card.classList.remove("bg-white");
+                    } else if (data.event === "start") {
+                        card.classList.add("bg-success");
+                        card.classList.remove("bg-white");
+                    } else {
+                        card.classList.add("bg-white");
+                        card.classList.remove("bg-warning");
+                    }
+                })
+                .catch(error => console.error("Failed to fetch event:", error));
+        }
 
-    // Panggil pertama kali saat halaman selesai dimuat
-    updateCard();
+        // Panggil pertama kali saat halaman selesai dimuat
+        updateCard();
 
-    // Jalankan ulang setiap 3 detik
-    setInterval(updateCard, 3000);
-});
+        // Jalankan ulang setiap 3 detik
+        setInterval(updateCard, 3000);
+    });
 </script>
