@@ -7,7 +7,7 @@ if ($conn->connect_error) {
     exit;
 }
 
-$result = $conn->query("SELECT event FROM remote_1 ORDER BY timestamp DESC LIMIT 1");
+$result = $conn->query("SELECT event FROM remote_2 ORDER BY timestamp DESC LIMIT 1");
 
 if ($result) {
     if ($row = $result->fetch_assoc()) {
